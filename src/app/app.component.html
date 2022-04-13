@@ -13,7 +13,11 @@
 </div>
 
 <hr>
-<button type="button" class="btn btn-primary" style="font-size: 15px;">Total Objects Detected - <span class="badge" style="font-size: 15px;">{{totalObjectsDetected}}</span></button>
+<button type="button" class="btn btn-primary" style="font-size: 15px;">Total Objects Detected - <span class="badge"
+    style="font-size: 15px;">{{totalObjectsDetected}}</span></button>
+&nbsp;&nbsp;
+<span class="badge" *ngIf="dataLoading" style="font-size: 18px;color:sienna">object detection started Please
+  wait...</span>
 <hr>
 
 <div class="snap-container" style="margin-top: 20px;">

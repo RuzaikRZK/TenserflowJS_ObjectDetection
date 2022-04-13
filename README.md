@@ -1,6 +1,6 @@
 # Dependencies Install
 
-after clone the project run 'npm install' command to install node modules , because in this repository not containing any node modules cause of file size 
+after cloned the project run 'npm install' command to install node modules , because in this repository not containing any node modules cause of file size 
 
 # ObjectDetection
 

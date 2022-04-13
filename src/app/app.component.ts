@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { async } from '@angular/core/testing';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
-import '@tensorflow/tfjs'
+import '@tensorflow/tfjs';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +21,8 @@ export class AppComponent implements AfterViewInit {
     class: '- - -',
     score: 0
   }];
-  totalObjectsDetected= 0;
+  totalObjectsDetected = 0;
+  dataLoading = false;
 
   async ngAfterViewInit() {
     await this.setupDevices();
@@ -61,10 +62,12 @@ export class AppComponent implements AfterViewInit {
 
   // load the tenseflow object detection model and send video stram to model an get response
   async loadImageDetection() {
+    this.dataLoading = true;
     cocoSsd.load().then(model => {
       model.detect(this.video.nativeElement).then(predictions => {
         this.predictionValue = predictions;
         this.totalObjectsDetected = predictions.length
+        this.dataLoading = false;
       });
     });;
   }
