@@ -1,0 +1,30 @@
+<div class="video-container" *ngIf="!error">
+  <video #video id="video" [width]="WIDTH" [height]="HEIGHT" autoplay></video>
+</div>
+
+<div class="snap-container">
+  <button class="btn btn-primary" (click)="stopCamera()">Stop Stream</button>
+  <button class="btn btn-primary" (click)="starCamera()">Sart Stream </button>
+  <button class="btn btn-primary" (click)="loadImageDetection()">Sart Detection</button>
+
+  <div class="alert alert-danger" role="alert">
+    {{error}}
+  </div>
+</div>
+
+<hr>
+<button type="button" class="btn btn-primary" style="font-size: 15px;">Total Objects Detected - <span class="badge" style="font-size: 15px;">{{totalObjectsDetected}}</span></button>
+<hr>
+
+<div class="snap-container" style="margin-top: 20px;">
+  <table>
+    <tr>
+      <th>Detected Object</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let predictionValues of predictionValue">
+      <td>{{predictionValues.class}}</td>
+      <td>{{predictionValues.score}}</td>
+    </tr>
+  </table>
+</div>
