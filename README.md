@@ -1,3 +1,7 @@
+# Dependencies Install
+
+after clone the project run 'npm install' command to install node modules , because in this repository not containing any node modules cause of file size 
+
 # ObjectDetection
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
